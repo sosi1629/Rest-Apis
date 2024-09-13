@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTAPPIS</title>
+</head>
+<style>
+    body{
+       text-align: center;
+    
+    }
+    .container{
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgb(196, 192, 192);
+        width: 50%;
+        height: 300px;
+        margin-top: 8%;
+    }
+    .response-area{
+        align-items: center;
+        font-size: 1.5rem;
+        border: 1px solid lavender;
+        padding: 10px;
+        margin-bottom: 15px;
+        background-color: rgb(200, 209, 214) ;
+        color: azure;
+    }
+    label{
+     display: grid;
+     grid-template-rows: 1px 1px 1px;
+     text-align: left ;
+     margin-left: 10px;
+     font-size: 1.rem;
+    }
+    #idInput,#secretInput,#scoreInput{
+        padding: 5px;
+        margin-bottom: 10px;
+        width: 70%;
+        margin-left: 15px;
+        border: 1px solid lightblue;
+    }
+    #get,#post,#put,#patch,#delet{
+        margin-top: 20px;
+        padding: 10px;
+        width: 15%;
+        border: 1px solid white;
+    }
+    #get{
+        color: white;
+        background-color: blue;
+    }
+    #post{
+        color: white;
+        background-color: green;
+    }
+    #put{
+        color: white;
+        background-color: yellow;
+    }
+    #patch{
+        color: white;
+        background-color: red;
+    }
+    #delet{
+        color: white;
+        background-color: palevioletred;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="response-area">
+                <p>
+                    <%= content%>
+                </p>
+            </div>
+        </div>
+        <form id="myform"  method="post">
+            <label for="idInput">Id:</label>
+            <input type="text" name="Id" id="idInput">
+    
+            <label for="secretInput">Secret:</label>
+            <input type="text" name="secret" id="secretInput">
+    
+            <label for="scoreInput">Score:</label>
+            <input type="number" name="score" id="scoreInput">
+            
+            <label for="submit">Route:</label>
+            <input type="submit" formaction="/get-secret" id="get" value="Get">
+            <input type="submit" formaction="/post-secret"id="post" value="Post">
+            <input type="submit" formaction="/put-secret"  id="put" value="Put">
+            <input type="submit" formaction="/patch-secret" id="patch" value="Patch">
+            <input type="submit" formaction="/delet-secret" id="delet" value="Delet">
+        </form>
+    </div>
+    
+</body>
+</html>
